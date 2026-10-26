@@ -8,14 +8,29 @@
     card.className = 'game-card';
     const artwork = document.createElement('div');
     artwork.className = 'game-art';
-    artwork.setAttribute('aria-hidden', 'true');
     const mark = document.createElement('span');
     mark.className = 'game-mark';
+    mark.setAttribute('aria-hidden', 'true');
     mark.textContent = String(index + 1).padStart(2, '0');
     const word = document.createElement('span');
     word.className = 'game-word';
+    word.setAttribute('aria-hidden', 'true');
     word.textContent = game.label || game.title;
     artwork.append(mark, word);
+    // Optional site-local artwork; entries without an image retain the numbered cover.
+    if (typeof game.image === 'string' && /^\.\/(?:[a-z0-9][a-z0-9-]*\/)+[a-z0-9][a-z0-9._-]*\.(?:png|jpe?g|webp|avif)$/i.test(game.image)) {
+      const image = document.createElement('img');
+      image.className = 'game-image';
+      image.alt = game.imageAlt || `${game.title} のイメージアート`;
+      image.loading = index === 0 ? 'eager' : 'lazy';
+      image.decoding = 'async';
+      image.width = game.imageWidth || 1600;
+      image.height = game.imageHeight || 900;
+      image.addEventListener('load', () => artwork.classList.add('has-image'));
+      image.addEventListener('error', () => { image.remove(); artwork.classList.remove('has-image'); });
+      image.src = game.image;
+      artwork.append(image);
+    }
     const body = document.createElement('div');
     body.className = 'game-body';
     const label = document.createElement('p');
