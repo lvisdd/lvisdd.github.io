@@ -1,0 +1,19 @@
+{
+  "environment": "production",
+  "baseline": "production-v127",
+  "candidate": "production-player-onboarding",
+  "publishedFeatures": [
+    "PC controls retained",
+    "NPC palm and idle posture candidate",
+    "Horse step wave timing experiment",
+    "D royal tracking and king movement candidate",
+    "Captured ally automatic return ON or manual return OFF",
+    "Ordinary ground attack input buffer: final 100 ms, one slot, direction retained"
+  ],
+  "knownLimits": [
+    "WebGL and iPhone checks skipped: rendering/device verification unavailable; difficult recovery skipped by user instruction.",
+    "Human feel and balance acceptance not verified."
+  ],
+  "productionUnchanged": false,
+  "developmentOptions": "Guard experiment and ability adjustments disabled in production; DEV unchanged"
+}

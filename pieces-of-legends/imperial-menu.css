@@ -1,0 +1,176 @@
+/* Imperial command table. All rules are scoped to the two existing menus. */
+:is(#start-menu,#lobby){--ink:#302c24;--muted:#625749;--paper:#f4eedf;--line:#97876b;--crimson:#782c2c;--ally-ink:#1b5266;--enemy-ink:#8b302c;color:var(--ink);color-scheme:light;background-color:#e9dfc9;background-image:linear-gradient(90deg,#f4eedfeb 0%,#f4eedfd1 42%,#f4eedf24 78%),url('assets/imperial-command-map.png');background-position:center;background-size:cover;background-attachment:local;isolation:isolate;scrollbar-color:#817253 #ede4d1;}
+:is(#start-menu,#lobby) :is(button,select,summary,input):focus-visible{outline:3px solid #1b5266;outline-offset:4px;box-shadow:0 0 0 6px #fffaf0}
+:is(#start-menu,#lobby) :is(h2,strong){text-shadow:none}
+:is(#start-menu,#lobby) p{color:var(--muted)}
+:is(#start-menu,#lobby) button:active{filter:brightness(.95)}
+/* The initial dialog focus is an announcement target, never a Tab stop. */
+#start-menu[tabindex="-1"]:focus{outline:0}
+#start-menu{flex-direction:column;align-items:stretch;min-height:100%;padding:max(32px,env(safe-area-inset-top)) max(6vw,env(safe-area-inset-right)) max(32px,env(safe-area-inset-bottom)) max(6vw,env(safe-area-inset-left))}
+#start-menu .imperial-entry{max-width:1100px;width:100%;min-width:0;flex:none;margin:auto;position:relative;border-left:3px solid var(--crimson);padding:0 0 0 35px}
+#start-menu .imperial-masthead{display:flex;align-items:center;gap:15px;margin-bottom:48px}
+#start-menu .imperial-emblem{display:block;width:48px;height:48px;flex:none}
+#start-menu .imperial-edition{min-width:0;overflow-wrap:anywhere;font-size:12px;letter-spacing:.16em;color:var(--muted)}
+#start-menu .lobby-kicker{color:var(--crimson);font-size:14px;font-weight:700;letter-spacing:.16em;line-height:1.5}
+#start-menu #menu-title{margin:19px 0 20px;max-width:700px;font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.025em;line-height:.9;overflow-wrap:anywhere}
+#start-menu .title-prefix{display:block;font-size:clamp(29px,3.6vw,48px);font-style:italic;letter-spacing:.025em;line-height:1.25}
+#start-menu .title-empires{display:block;font-size:clamp(68px,10vw,126px);letter-spacing:-.055em;line-height:1.08}
+#start-menu .menu-purpose{font-size:16px;max-width:410px;line-height:1.75;margin:0 0 34px;color:var(--ink)}
+#start-menu .menu-purpose>span{display:block;text-wrap:balance}
+/* Each choice owns its border box; the gap also reserves keyboard-focus paint. */
+#start-menu .entry-choices{display:flex;flex-direction:column;gap:12px;width:100%;max-width:440px;margin:0;border:0}
+#start-menu .entry-choices button{display:grid;grid-template-columns:max-content minmax(0,1fr);align-items:center;gap:18px;width:100%;min-width:0;min-height:86px;flex:none;border:1px solid #847354;border-radius:0;background:#f7f1e4d9;padding:13px 20px;text-align:left;color:var(--ink);font-weight:400;line-height:1.4;box-shadow:none}
+#start-menu .entry-choices button:focus-visible{outline:2px solid var(--ally-ink);outline-offset:3px;box-shadow:0 0 0 3px #fffaf0}
+#start-menu .entry-choices button:last-child{background:var(--crimson);color:#fff8e8;border-color:var(--crimson)}
+#start-menu .entry-choices .entry-number{font:italic 23px/1 Georgia,serif;min-width:24px;width:auto;flex:none;color:#7b6542;margin:0}
+#start-menu .entry-choices button:last-child .entry-number{color:#e0c79a}
+#start-menu .entry-copy{display:block;min-width:0;margin:0;color:inherit;overflow-wrap:anywhere}
+#start-menu .entry-copy strong{font-family:'Hiragino Mincho ProN','Yu Mincho','Noto Serif CJK JP',serif;font-size:23px;font-weight:700;letter-spacing:.06em;line-height:1.35}
+#start-menu .entry-copy>span{display:block;font-size:14px;font-weight:400;letter-spacing:normal;line-height:1.4;margin-top:5px;color:var(--muted)}
+#start-menu .entry-choices button:last-child .entry-copy>span{color:#f4e6cf}
+@media(hover:hover){#start-menu .entry-choices button:hover{background:#e7d8b9}#start-menu .entry-choices button:last-child:hover{background:#622121}}
+#lobby{padding:max(26px,env(safe-area-inset-top)) max(30px,env(safe-area-inset-right)) max(26px,env(safe-area-inset-bottom)) max(30px,env(safe-area-inset-left));background-image:linear-gradient(90deg,#f4eedff5 0%,#f4eedfe8 43%,#f4eedf52 100%),url('assets/imperial-command-map.png')}
+#lobby .lobby-card{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:clamp(36px,6vw,90px);align-items:start}
+#lobby .briefing-head{grid-column:1;grid-row:1;border-bottom:2px solid var(--ink);margin-bottom:18px;padding-bottom:10px}
+#lobby .lobby-back{display:block;min-height:44px;min-width:44px;color:var(--muted);font-size:14px;text-decoration:underline;text-underline-offset:4px;padding:4px 0;background:none;border:0}
+#lobby h2{font-family:'Hiragino Mincho ProN','Yu Mincho','Noto Serif CJK JP',serif;font-size:32px;letter-spacing:.1em;line-height:1.3;margin:7px 0 0;color:var(--ink)}
+#lobby .preparation-sheet{grid-column:1;grid-row:2;min-width:0}
+#lobby label{color:var(--ink);font-size:14px;line-height:1.5}
+#lobby select{background-color:#fcf8ee;color:var(--ink);border:1px solid #97876b;border-bottom-color:#78684f;border-radius:2px;min-height:44px;font-size:16px;padding:8px 7px;margin-top:4px;box-shadow:0 1px 0 #fff8;max-width:100%}
+#lobby select:disabled{opacity:1;color:#6b6254;background:#e3daca;border-style:dashed;cursor:not-allowed}
+#lobby .lobby-grid{gap:12px 14px}
+#lobby .ally-choice-label{color:var(--ally-ink)}
+#lobby .enemy-choice-label{color:var(--enemy-ink)}
+#lobby #army-preparation>.roster-choice-label{grid-column:1/-1}
+#lobby :is(.match-options,.abilities-options){padding:0;margin:16px 0 0;border:0;border-top:1px solid #b9a98a;border-radius:0;color:var(--ink);background:none}
+#lobby :is(.match-options,.abilities-options)>summary{display:list-item;font-size:14px;color:var(--ink);line-height:1.5;min-height:44px;padding:11px 2px;cursor:pointer}
+#lobby :is(.match-options,.abilities-options)>summary span{font-size:13px;color:var(--muted);line-height:1.4}
+#lobby :is(.match-options,.abilities-options) p{font-size:14px;line-height:1.65;color:var(--muted)}
+#lobby .team-attributes{gap:20px;margin:8px 0 12px;grid-template-columns:1fr 1fr}
+#lobby .team-attributes fieldset{border:0;padding:0;min-width:0}
+#lobby .team-attributes legend{font-size:14px;color:var(--ally-ink);font-weight:700}
+#lobby .equipment-stats output{color:var(--ink)}
+#lobby .team-attributes fieldset:first-child legend{color:var(--ally-ink)}
+#lobby .team-attributes fieldset:nth-of-type(2) legend{color:var(--enemy-ink)}
+#lobby :is(.hero-adjustment,#hero-adjustment,#lobby-rule){color:#713525!important;background:#fbf2de;font-size:14px;padding:8px 10px;border-left:3px solid #99663b;margin:10px 0;line-height:1.6}
+#lobby .hero-adjustment:empty{display:none}
+#lobby #start-battle{background:var(--crimson);color:#fff8e8;border:1px solid #632120;border-radius:2px;font-family:'Hiragino Mincho ProN','Yu Mincho','Noto Serif CJK JP',serif;font-size:19px;font-weight:700;letter-spacing:.06em;min-height:52px;margin-top:16px;box-shadow:0 3px 0 #5b302433}
+#lobby .abilities-options .ability-checks{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+#lobby .abilities-options .ability-checks label{display:flex;align-items:center;gap:8px;min-height:44px;margin:0;padding:4px 0;font-size:14px;line-height:1.45}
+#lobby .abilities-options input[type=checkbox]{width:21px;height:21px;accent-color:var(--crimson);flex:none}
+#lobby #ability-forward-hop-row,#lobby .abilities-options .followup-options{grid-column:1/-1}
+#lobby .abilities-options .followup-options{grid-template-columns:1fr;border-top:1px solid #b9a98a;padding-top:8px;margin-top:8px}
+#lobby .abilities-options .followup-help{opacity:1}
+#lobby .abilities-options #abilities-summary{font-size:13px;color:var(--muted)}
+#lobby #tutorial-guide{border-color:var(--ally-ink);background:#fcf8ee;color:var(--ink)}
+#lobby #lobby-summary{border-color:var(--line);background:#fcf8ee;color:var(--ink)}
+#lobby #abilities-reset{background:#f9f2e3;border:1px solid #897652;color:var(--ink);min-height:44px;font-size:14px;border-radius:2px}
+/* A functional starting-position diagram, not a second selection surface. */
+#lobby .campaign-preview{grid-column:2;grid-row:1/3;margin:25px 0 0;min-width:0;padding:0 0 18px;border-top:1px solid #7f6c4b;border-bottom:1px solid #7f6c4b;background:#f7efdca8;display:grid;grid-template-columns:1fr;align-self:start}
+#lobby .campaign-heading{display:flex;align-items:center;justify-content:space-between;padding:13px 18px 9px;color:#55462f;font-size:14px;letter-spacing:.12em}
+#lobby .campaign-register{display:block;width:24px;height:24px;opacity:.8}
+#lobby #campaign-map{display:block;width:100%;height:auto;max-height:450px;color:var(--ink)}
+#lobby .campaign-key{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;padding:14px 20px 0;font-size:14px;line-height:1.5;border-top:1px solid #b8a88a;margin:0 16px;color:var(--ink)}
+#lobby .campaign-key b{font-weight:650}
+#lobby .map-ally{color:var(--ally-ink)}
+#lobby .map-enemy{color:var(--enemy-ink)}
+#lobby .map-hero{grid-column:1/-1}
+#lobby .map-kings{grid-column:1/-1;--map-color:#dbe7ea}
+/* Equal dark tiles and equal painted area keep the three symbols balanced.
+   The faction labels carry the camp colors; the single king key explains shape. */
+#lobby .campaign-key i{display:inline-block;vertical-align:middle;margin-right:3px}
+#lobby :is(.map-key-square,.map-key-diamond,.map-key-player){width:16px;height:16px;background:#101c21;position:relative}
+#lobby :is(.map-key-square,.map-key-diamond,.map-key-player):after{content:"";position:absolute;background:var(--map-color);width:8px;height:8px;left:4px;top:4px}
+#lobby .map-key-diamond:after{transform:rotate(45deg)}
+#lobby .map-ally{--map-color:#45dfff}
+#lobby .map-enemy{--map-color:#ff715f}
+#lobby .map-key-player:after{width:11.313708px;height:11.313708px;left:2.343146px;top:2.343146px;background:#fff;clip-path:polygon(50% 0,100% 100%,0 100%)}
+#lobby .map-terrain-key{grid-column:1/-1;font-size:12px}
+#lobby .map-key-river{width:12px;height:9px;background:#315e72}
+#lobby .map-key-bridge{width:12px;height:9px;background:#bc9860}
+#lobby .map-terrain-name{grid-column:1/-1;font-size:12px;color:var(--muted)}
+#lobby[data-menu-route=tutorial] .preparation-sheet{padding-top:4px}
+#lobby[data-menu-route=tutorial] #start-battle{margin-top:22px}
+#lobby [hidden]{display:none!important}
+@media(max-width:720px){
+ #start-menu{padding:max(20px,env(safe-area-inset-top)) max(20px,env(safe-area-inset-right)) max(20px,env(safe-area-inset-bottom)) max(20px,env(safe-area-inset-left));background-image:linear-gradient(90deg,#f4eedfde,#f4eedf88),url('assets/imperial-command-map.png');background-position:60% center}
+ #start-menu .imperial-entry{padding-left:16px}
+ #start-menu .imperial-masthead{gap:12px;margin-bottom:24px}
+ #start-menu .imperial-emblem{width:40px;height:40px}
+ #start-menu .lobby-kicker{font-size:13px;letter-spacing:.06em}
+ #start-menu #menu-title{margin:14px 0 16px}
+ #start-menu .title-prefix{font-size:28px}
+ #start-menu .title-empires{font-size:clamp(52px,15vw,72px)}
+ #start-menu .menu-purpose{font-size:16px;line-height:1.65;max-width:100%;margin-bottom:22px;overflow-wrap:anywhere}
+ #start-menu .entry-choices button{min-height:82px;padding:12px 14px;gap:12px}
+ #start-menu .entry-copy strong{font-size:20px}
+ #lobby{padding:max(12px,env(safe-area-inset-top)) max(20px,env(safe-area-inset-right)) max(20px,env(safe-area-inset-bottom)) max(20px,env(safe-area-inset-left));background-image:linear-gradient(#f4eedfe8,#f4eedfdf),url('assets/imperial-command-map.png')}
+ #lobby .lobby-card{display:flex;flex-direction:column;max-width:540px;gap:0}
+ #lobby .briefing-head{width:100%;margin:0 0 12px;padding-bottom:10px}
+ #lobby h2{font-size:27px;margin:3px 0 0}
+ #lobby .preparation-sheet{width:100%}
+ #lobby .campaign-preview{width:100%;grid-template-columns:90px 1fr;grid-template-rows:auto auto;padding:0;border:0;border-bottom:1px solid #b9a98a;margin:0 0 14px;background:none}
+ #lobby #campaign-map{grid-column:1;grid-row:1/3;width:86px;height:103.2px;max-height:none}
+ #lobby .campaign-heading{grid-column:2;grid-row:1;padding:4px 0 4px 14px;font-size:12px;letter-spacing:.04em;align-self:end}
+ #lobby .campaign-register{display:none}
+ #lobby .campaign-key{grid-column:2;grid-row:2;align-self:start;grid-template-columns:1fr 1fr;gap:2px 10px;padding:0 0 7px 14px;border:0;margin:0;font-size:13px}
+ #lobby .map-hero{font-size:14px}
+ /* Match the tactical 5:6 viewport without squeezing the selector column. */
+ #lobby[data-menu-route=preparation] .campaign-preview{grid-template-columns:148px minmax(0,1fr)}
+ #lobby[data-menu-route=preparation] #campaign-map{width:144px;height:172.8px}
+ #lobby[data-menu-route=preparation] .campaign-heading{padding-left:10px}
+ #lobby[data-menu-route=preparation] .campaign-key{column-gap:6px;padding-left:10px}
+ #lobby .map-terrain-name{font-size:12px}
+ #lobby .lobby-grid{gap:10px 12px}
+ #lobby :is(.match-options,.abilities-options){margin-top:10px}
+ #lobby #start-battle{margin-top:12px}
+ #lobby .team-attributes{grid-template-columns:1fr}
+ #lobby[data-menu-route=tutorial] .campaign-preview{margin-bottom:20px}
+}
+@media(max-width:350px){#start-menu{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}#start-menu .imperial-entry{padding-left:16px}#start-menu .entry-copy strong{font-size:19px}#lobby{padding-left:14px;padding-right:14px}#lobby label{font-size:13px}#lobby .campaign-key{font-size:12px}#lobby .abilities-options .ability-checks{grid-template-columns:1fr}}
+@media(max-height:600px){#start-menu .imperial-masthead{margin-bottom:18px}#start-menu .title-empires{font-size:clamp(48px,15vw,68px)}#start-menu .menu-purpose{margin-bottom:18px}#start-menu .entry-choices button{min-height:78px}#lobby .campaign-preview{margin-top:0}}
+@media(prefers-reduced-motion:reduce){:is(#start-menu,#lobby) *{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+/* Reserve a title-side slot; enlarged text may wrap the decoration below. */
+#start-menu .imperial-entry{display:block}
+#start-menu .imperial-copy{min-width:0}
+#start-menu .menu-title-row{display:flex;flex-wrap:wrap;align-items:flex-end;column-gap:clamp(8px,2vw,24px);row-gap:12px;margin:19px 0 20px;min-width:0}
+#start-menu .menu-title-row #menu-title{flex:none;max-width:100%;min-width:0;margin:0}
+#start-menu .menu-coin-art{flex:none;width:clamp(96px,14.3vw,180px);aspect-ratio:1 / 1;margin:0;overflow:hidden;pointer-events:none;user-select:none}
+/* Show the complete left-profile coin without cropping or mirroring. */
+#start-menu .menu-coin-art img{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none}
+@media(max-width:720px){
+ #start-menu .menu-title-row{margin:14px 0 16px}
+ #start-menu .menu-coin-art{width:clamp(70px,19vw,112px)}
+}
+@media(max-height:600px){#start-menu .menu-coin-art{width:clamp(64px,16vw,92px)}}
+
+/* A lesson's marker size must not jump when a phone rotates past 720px. */
+#lobby[data-menu-route=tutorial] #campaign-map{width:144px;height:172.8px;max-height:none;justify-self:center}
+@media(max-width:720px){
+ #lobby[data-menu-route=tutorial] .campaign-preview{grid-template-columns:148px minmax(0,1fr)}
+ #lobby[data-menu-route=tutorial] .campaign-heading{padding-left:10px}
+ #lobby[data-menu-route=tutorial] .campaign-key{column-gap:6px;padding-left:10px}
+}
+@media(min-width:721px) and (max-width:1024px){
+ #lobby[data-menu-route=tutorial] .campaign-key{grid-template-columns:1fr;padding:10px 8px 0;margin:0 8px}
+}
+
+/* Short scenario briefings remain inside the existing scrollable preparation. */
+#lobby .battle-scenario-picker{margin:0 0 16px;min-width:0}
+#lobby .battle-scenario-picker label{display:block}
+#lobby #battle-scenario-help{font-size:12px;line-height:1.5;margin:7px 0;color:var(--muted)}
+#lobby #battle-scenario-briefing{border-left:3px solid var(--crimson);background:#fbf5e8;padding:12px 14px;margin-top:10px;overflow-wrap:anywhere}
+#lobby #battle-scenario-title{display:block;color:var(--crimson);font-size:18px;line-height:1.4}
+#lobby #battle-scenario-briefing p{font-size:14px;line-height:1.6;margin:8px 0}
+#lobby #battle-scenario-objective{font-weight:700;color:var(--ink)}
+#lobby #battle-scenario-hints{margin:8px 0;border-top:1px solid #b9a88e}
+#lobby #battle-scenario-hints>summary{display:list-item;box-sizing:border-box;min-height:44px;padding:10px 0;cursor:pointer;font-size:14px;font-weight:700;line-height:1.6;color:var(--ink)}
+#lobby #battle-scenario-hints:not([open])>p{display:none}
+#lobby #battle-scenario-briefing small{display:block;font-size:12px;line-height:1.6;color:var(--muted)}
+#lobby[data-battle-scenario]:not([data-battle-scenario=free]) .control-mode-label,
+#lobby[data-battle-scenario]:not([data-battle-scenario=free]) .ally-choice-label,
+#lobby[data-battle-scenario]:not([data-battle-scenario=free]) .enemy-choice-label{display:none}
+
+/* Frame the complete map; keep every legal edge symbol inside without moving it. */
+#lobby #campaign-map{outline:1px solid #3e4b4f;outline-offset:0}

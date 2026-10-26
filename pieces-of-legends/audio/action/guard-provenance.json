@@ -1,0 +1,18 @@
+{
+  "origin": "Original deterministic NumPy synthesis. No external samples or melodies.",
+  "generator": "generate_guard_audio.py",
+  "generator_sha256": "cb397d36ad75827cb2ee88025afaba57ae7c10cc8459373a1c7b68814e77dad8",
+  "seed": 184703,
+  "listening_status": "Not auditioned. Offline PCM and mocked WebAudio/event checks only.",
+  "purpose": "One low-priority cue for an actual controlled-hero guard_block event.",
+  "file": "guard.wav",
+  "sha256": "265f05d27d9e13c95816f2dc6c051b6eb5d355f7bbf312d4bb528fd03dca6edd",
+  "format": "PCM16 WAV, mono, 22050 Hz",
+  "duration_seconds": 0.1,
+  "peak": 0.20172119140625,
+  "rms": 0.029999255378100956,
+  "energy": 8.999553232405191e-05,
+  "clipped_samples": 0,
+  "endpoint_jump": 0.0,
+  "bytes": 4454
+}

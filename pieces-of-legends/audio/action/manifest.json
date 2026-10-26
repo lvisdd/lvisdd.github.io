@@ -1,0 +1,22 @@
+{
+  "origin": "Original deterministic NumPy synthesis; no external samples.",
+  "listening_status": "Not auditioned. Waveform and WebAudio mocks only.",
+  "files": {
+    "impact": {
+      "file": "impact.wav",
+      "description": "Original short dry contact tick with a mid-low punch; less tail than the prior cue. No gain increase.",
+      "duration_seconds": 0.14,
+      "sample_rate": 22050,
+      "channels": 1,
+      "peak": 0.36529541015625,
+      "peak_dbfs": -8.747115691066146,
+      "rms": 0.04899863044275727,
+      "rms_dbfs": -26.196321174721795,
+      "clipped_samples": 0,
+      "loop": false,
+      "endpoint_jump": 0.0,
+      "adjacent_delta_rms": 0.025079363111584166,
+      "bytes": 6218
+    }
+  }
+}

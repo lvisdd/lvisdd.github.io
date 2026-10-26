@@ -1,0 +1,4 @@
+CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/
+impact_heavy.wav: Hammer Hit, pauliuw, https://opengameart.org/content/hit-sounds (recorded per creator).
+hurt_heavy.wav: impactPunch_heavy_000, Kenney, https://kenney.nl/assets/impact-sounds (production method unspecified).
+Edited: -5 semitones with duration preserved; RMS matched to preceding -2 sample; boundary fades; no +2dB boost.

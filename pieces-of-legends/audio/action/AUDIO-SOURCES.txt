@@ -1,0 +1,27 @@
+Pieces audio update 2026-10-24
+BGM: Battle Theme, Wolfgang_ / Theodore Kerr, CC0. https://opengameart.org/node/16611
+Source excerpt 8–24sec, -3semitones/tempo unchanged, restrained EQ,120ms loop crossfade.
+Light swing: artisticdude, Swishes Sound Pack, CC0. https://opengameart.org/content/swishes-sound-pack
+Light contact: pauliuw Hit Sounds, CC0. https://opengameart.org/content/hit-sounds
+Short excerpts, fades, level balance; contact excludes swing to avoid doubling.
+Heavy hit/hurt: prior CC0 Hammer/Punch sources, see CC0-IMPACT-SOURCES.txt. Additional -3semitones after accepted -5, effective approximately -8; diffuse bandlimited convolution tail. DSP processing not real room recording.
+License: https://creativecommons.org/publicdomain/zero/1.0/
+No endorsement implied.
+
+Additional game-embedded effects, 2026-10-24:
+Copyright 効果音工房 (https://umipla.com/). These seven umi_*.wav files are NOT CC0. Official terms https://umipla.com/利用規約 and FAQ https://umipla.com/question allow individual commercial/noncommercial game use and editing, but prohibit redistribution of original or edited sounds as assets. Do not extract or redistribute as a sound pack.
+Sources: thrust https://umipla.com/soundeffect/4184 ; charge https://umipla.com/soundeffect/4193 ; slash https://umipla.com/soundeffect/4830 ; jump https://umipla.com/soundeffect/503 ; guard https://umipla.com/soundeffect/418 ; sweep wind https://umipla.com/soundeffect/1340 ; thrust wind https://umipla.com/soundeffect/1433 .
+Only mono conversion, protective attenuation and endpoint fades; weapon timing/engine unchanged. Normal gameplay delivers these effects as incorporated game audio, not as an offered standalone download or preview.
+Heavy equipment plays its action-specific impact at0.90 playback rate; light equipment at1.00. No extra source layers or loudness boost.
+
+Jump/awakening revision: 効果音工房 step02 (4546), landing01 (3792), power_up18 (4730). Individual game incorporation only; no standalone redistribution. Mono arithmetic mean, attenuation, endpoint fades; awakening capped at 1.5s with 300ms fade. Jump contact original umi_jump unchanged, runtime playback rate multiplied by 0.82. https://umipla.com/利用規約 https://umipla.com/question
+
+Victory/defeat music excerpts by RandomMind, CC0 1.0. Official author uploads:
+https://opengameart.org/content/medieval-victory-theme
+https://opengameart.org/content/medieval-defeat-theme
+https://creativecommons.org/publicdomain/zero/1.0/
+Originals retained. First8s victory/10s defeat, stereo44100PCM16, attenuation only peak<=.45,30ms fadein and1s fadeout. No pitch change or synthesis. Thematic selection based on author's major/positive versus minor/calm descriptions; not verified listening acceptance or actual live instruments. Excerpts are functional bounded result cues, not assertions of complete musical phrase resolution. Next preparation or scenario interrupts immediately; no waiting requirement.
+
+Result distinction 2026-10-24: failure aftermath uses Bittersweet by Emma_MA, CC0/public domain: https://opengameart.org/content/bittersweet (official file bittersweet_0.mp3). Objective not completed uses Regret - Short Emotional Piano by Wolfgang_, CC0: https://opengameart.org/content/regret-short-emotional-piano (piano_nostalgia_0.mp3). https://creativecommons.org/publicdomain/zero/1.0/ . Source files retained. Defeat excerpt starts1.5s, duration12s main/10s tutorial; regret first5s. Attenuation only, stereo44.1kHzPCM16, endpoint fades, no pitch change or synthesized instruments. Author labels sad strings/death screen versus gentle quiet piano/regret; intended quiet battlefield aftermath, not a claim of Japanese historical instrumentation, live-recorded instruments or verified listening quality. Tutorial success retains existing8s victory excerpt. Result playback follows visible result overlay, no looping.
+
+Jump impact resonance 2026-10-25: umi_jump only, source se_dageki6.mp3 (Umipla soundeffect/503). Original arithmetic-mono PCM reconstructed byte-exact against prod138/DEV10 manifest. Source-derived low body via3:2 resampling,58–560Hz bandpass; nonperiodic70–470Hz DSP diffuse tail;38Hz highpass;1.12s asset with160ms endpoint fade, peak<=.55. Runtime rate, gain, event admission and priorities unchanged. Not an oscillator or claimed real-room recording. Existing individual-game-only terms apply; no standalone audio redistribution.

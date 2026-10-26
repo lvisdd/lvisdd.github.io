@@ -1,0 +1,11 @@
+Idle, walking and running animations use retargeted Quaternius Universal Animation Library Standard v3.0 clips Idle_Loop, Walk_Loop and Jog_Fwd_Loop.
+Source: https://quaternius.com/packs/universalanimationlibrary.html
+Official download: https://quaternius.itch.io/universal-animation-library
+License: CC0 1.0, verified against License.txt in the downloaded Standard archive.
+Adaptations: humanoid joint mapping, target leg-proportion IK, neutral palm orientation, ground-contact correction, in-place root and gameplay stride matching.
+The CC0 declaration applies to the source animation data, not to the separately supplied Tripo character model. Character rights remain subject to the original generation/account terms.
+Charge, hand-blade, thrust and jump clips are custom-authored prototype motions.
+
+2026-10-03 nearby NPC LOD:
+npc-rig-minimal.glb retains the supplied 5,999-triangle NPC mesh, UVs and vertex colors; skin weights transferred from the existing hero by nearest surface/barycentric interpolation. 24 bones and right-hand markers retained. Runtime reuses existing hero clips and existing wood/stone materials. No new third-party character asset or license was acquired; original character usage rights still apply.
+Run compact override (run-compact.js): derived only from the existing run clip via six-track fixed-length leg IK. Fore/aft foot sweep and runtime stride coefficient both scaled0.75; geometry/skin/materials and the other clips unchanged. Source GLB remains intact. Calibration metadata must stay paired with the replacement clip. See verification/locomotion for numeric and offline visual limits.
