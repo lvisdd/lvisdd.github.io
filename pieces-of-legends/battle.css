@@ -30,7 +30,7 @@ select{font-size:16px}
 /* Japanese action names remain horizontal even on narrow iPhone buttons. */
 .attack-grid #charge,.attack-grid #sweep,.attack-grid #thrust,.attack-grid #jump{padding:6px 2px}
 .attack-grid #charge strong,.attack-grid #sweep strong,.attack-grid #thrust strong,.attack-grid #jump strong{white-space:nowrap;writing-mode:horizontal-tb;letter-spacing:0;font-size:20px;line-height:1.2}
-#charge-sub,.keyboard-hint{display:none!important}
+#charge-sub{display:none!important}
 .promotion{pointer-events:auto}.piece-selector{font-size:13px;white-space:nowrap}.piece-selector select{min-height:34px;font-size:16px;border:1px solid #e2c38a;border-radius:7px;background:#342d23;color:#ffe4a7;padding:3px 5px;max-width:98px;margin-right:6px}.promotion b.sr-only{position:absolute}.promotion span{font-size:10px;display:block;margin-top:3px}.promotion{min-width:170px}
 @media(max-width:600px){.promotion{top:150px;padding:6px 8px}.piece-selector select{min-height:31px}.initial-hint{top:230px}}
 
@@ -578,11 +578,19 @@ header h1{letter-spacing:0;line-height:1.1;overflow-wrap:normal}
  #captured-return-panel{max-height:calc(100svh - var(--combat-hud-top) - 44px - 16px)}
 }
 
-/* Input hints are overlays: switching a hybrid device never moves controls. */
+/* Keyboard help stays visible during combat, but never moves a touch target.
+   Fine-pointer fallback covers first paint before the input listener starts. */
 #battle-controls .stick-wrap,#attack,#guard{position:relative}
-#battle-controls .desktop-note{display:block;position:absolute;bottom:-18px;left:0;width:100%;margin:0;font-size:10px;white-space:nowrap;visibility:hidden;pointer-events:none}
-.keyboard-hint{position:absolute;top:4px;right:6px;font:9px/1.2 system-ui,sans-serif;letter-spacing:0;visibility:hidden;pointer-events:none}
+#battle-controls .desktop-note{display:block;position:absolute;bottom:0;left:0;width:100%;margin:0;font:12px/1.4 system-ui,sans-serif;white-space:nowrap;color:#fff2d4;visibility:hidden;pointer-events:none}
+.keyboard-hint{display:block;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% + 2px);padding:3px 5px;border:1px solid #b8cbd680;border-radius:5px;background:#101c2ef2;color:#fff5df;font:600 11px/1.3 system-ui,sans-serif;letter-spacing:0;text-align:center;visibility:hidden;pointer-events:none;box-sizing:border-box}
+.keyboard-controls{display:none;position:absolute;bottom:80px;left:50%;transform:translateX(-50%);box-sizing:border-box;width:max-content;max-width:calc(100% - 360px);padding:8px 12px;gap:6px 16px;align-items:center;justify-content:center;flex-wrap:wrap;border:1px solid #91a8bf80;border-radius:9px;background:#101c2ef2;color:#fff5df;font:12px/1.5 system-ui,sans-serif;text-align:center;pointer-events:none}
+.keyboard-controls>span{white-space:nowrap}.keyboard-controls b{font-weight:600;margin-right:3px}.keyboard-controls kbd{font:600 12px/1.3 system-ui,sans-serif;padding:1px 4px;border:1px solid #a8bacd75;border-bottom-width:2px;border-radius:4px;background:#273649;color:#fff}.keyboard-controls small{font-size:10px;color:#d4dce7;white-space:nowrap}
 #game[data-input="keyboard"] .desktop-note,#game[data-input="keyboard"] .keyboard-hint{visibility:visible}
+#game[data-input="keyboard"] .keyboard-controls{display:flex}
+@media(hover:hover) and (pointer:fine){#game:not([data-input]) .desktop-note,#game:not([data-input]) .keyboard-hint{visibility:visible}#game:not([data-input]) .keyboard-controls{display:flex}}
+@media(max-height:480px){.keyboard-controls{padding:5px 9px;gap:4px 12px}}
+/* Narrow windows keep the same keys beside each control instead of obscuring play. */
+@media(max-width:699px){#game .keyboard-controls{display:none}}
 
 /* Tactical map ally controls: ordinary DOM controls over the paused 2D map. */
 .tactical-board{position:relative;width:min(100%,360px);aspect-ratio:5/6;margin:auto}.tactics-card .tactical-board canvas{width:100%;height:100%;margin:0}.tactical-board #tactical-map-controls{position:absolute;inset:0;pointer-events:none}.tactics-card .tactical-unit{position:absolute;transform:translate(-50%,-50%);font-size:11px;line-height:1.1;white-space:nowrap;border-radius:5px;padding:3px;min-width:25px;min-height:20px;margin:0;display:grid;place-items:center;border:1px solid transparent;pointer-events:none}.tactics-card button.tactical-unit{pointer-events:auto;min-width:30px;min-height:30px;touch-action:manipulation;background:#173d4b;color:#bdf9ff;border-color:#45dfff}.tactical-unit-enemy{background:#52231f;color:#ffd4ce}.tactical-unit-player{background:#eee6d0;color:#14232c;border-color:#fff}.tactical-unit-ally{background:#233c44;color:#7dabb6}.tactics-card button.tactical-unit:focus-visible{outline:3px solid #ffe17a;z-index:3}.tactics-card #tactical-map-help{font-size:13px;line-height:1.5}@media(max-height:480px){.tactics-content{grid-template-columns:minmax(200px,1fr) minmax(190px,1fr)}.tactical-board{max-width:260px}}
